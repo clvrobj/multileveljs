@@ -12,12 +12,12 @@ Country:
     <option value="Japan">Japan</option>
 </select>
 City:
-<input id="id-city" type="text" class="charfield required" name="city" maxlength="2000" />
+<input id="id-city" type="text" name="city" />
 Districts:
-<input id="id-district" type="text" class="charfield required" name="district" maxlength="2000" />
+<input id="id-district" type="text" name="district" />
 ```
 
-Pass controls map and data in option, that's all.
+Using `$.multilevel`, pass controls map and data in options, that's all.
 ```html
 <script type="text/javascript">
     $(function () {
