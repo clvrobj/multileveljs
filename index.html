@@ -33,23 +33,18 @@
         </div>
         <script type="text/javascript">
             $(function () {
-
-            var levelMap = {'#id-country':'#id-city', '#id-city':'#id-district'},
-
-            levelsData = {'#id-city':{
-            'China':['Beijing', 'Shanghai'],
-            'US':['Los Angeles'],
-            'Japan':['Tokyo']},
-
-            '#id-district':{
-            'Beijing':['Chaoyang', 'Dongcheng', 'Xicheng'],
-            'Shanghai':['Changning', 'Putuo'],
-            'Los Angeles':['Hollywood', 'Harbor Area'],
-            'Tokyo':['Ueno']}
-            };
-
-            setLevels(levelMap, levelsData);
-
+                $.multilevel({map:{'#id-country':'#id-city', '#id-city':'#id-district'},
+                              data:{'#id-country':{
+                                    'China':['Beijing', 'Shanghai'],
+                                    'US':['Los Angeles'],
+                                    'Japan':['Tokyo']},
+                                    '#id-city':{
+                                    'Beijing':['Chaoyang', 'Dongcheng', 'Xicheng'],
+                                    'Shanghai':['Changning', 'Putuo'],
+                                    'Los Angeles':['Hollywood', 'Harbor Area'],
+                                    'Tokyo':['Ueno']}
+                                    }
+                             });
             });
         </script>
     </body>
