@@ -1,1 +1,56 @@
-My GitHub Page
+<html lang="zh-CN">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	    <title>Multileveljs</title>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+        <style>
+            body { width:590px; background-color:#f5f5f5; color:#555; padding:0; margin:20px auto; border:0 }
+            #multi-form { background-color:#fff; padding:15px; position:relative; }
+        </style>
+        <script src="assets/js/jquery-1.8.1.min.js"></script>
+        <script src="assets/js/multilevel.js"></script>
+    </head>
+    <body>
+        <h3>Mutileveljs - Country, City and District</h3>
+        <div id="multi-form">
+            <a href="https://github.com/clvrobj/multileveljs"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+            <div class="control-group">
+                <label for="id-country">Country:</label>
+                <select id="id-country" class="choicefield required" name="country">
+                    <option value="China">China</option>
+                    <option value="US">United States</option>
+                    <option value="Japan">Japan</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="id-city">City:</label>
+                <input id="id-city" type="text" class="charfield required" name="city" maxlength="2000" />
+            </div>
+            <div class="control-group">
+                <label for="id-district">Districts:</label>
+                <input id="id-district" type="text" class="charfield required" name="district" maxlength="2000" />
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+
+            var levelMap = {'#id-country':'#id-city', '#id-city':'#id-district'},
+
+            levelsData = {'#id-city':{
+            'China':['Beijing', 'Shanghai'],
+            'US':['Los Angeles'],
+            'Japan':['Tokyo']},
+
+            '#id-district':{
+            'Beijing':['Chaoyang', 'Dongcheng', 'Xicheng'],
+            'Shanghai':['Changning', 'Putuo'],
+            'Los Angeles':['Hollywood', 'Harbor Area'],
+            'Tokyo':['Ueno']}
+            };
+
+            setLevels(levelMap, levelsData);
+
+            });
+        </script>
+    </body>
+</html>
